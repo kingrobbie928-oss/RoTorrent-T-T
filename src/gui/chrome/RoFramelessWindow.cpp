@@ -135,7 +135,11 @@ void RoFramelessWindow::changeEvent(QEvent *event)
 {
     QMainWindow::changeEvent(event);
     if (event->type() == QEvent::WindowStateChange)
+    {
         updateMaximizeButton();
+        if (!isMinimized())
+            QMetaObject::invokeMethod(this, [this] { repaint(); }, Qt::QueuedConnection);
+    }
 }
 
 void RoFramelessWindow::updateMaximizeButton()
