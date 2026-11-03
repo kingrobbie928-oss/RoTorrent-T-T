@@ -31,7 +31,6 @@ namespace
         f->setObjectName(QStringLiteral("tbSep"));
         f->setFixedSize(1, 34);
         layout->addWidget(f, 0, Qt::AlignVCenter);
-        layout->addSpacing(-4);   // html: margin 8px 2px on the 1 px separator, inside the 8 px gap
     }
 }
 
@@ -87,7 +86,6 @@ MainToolbar::MainToolbar(QWidget *parent)
     addSeparator(rl);
     connect(makeButton(QStringLiteral("settings"), tr("Settings"), false, rl), &QToolButton::clicked
             , this, &MainToolbar::settingsRequested);
-    rl->addSpacing(8);   // extra air before the search box
 
     m_search = new RoSearchBox;
     m_search->setFixedHeight(34);
