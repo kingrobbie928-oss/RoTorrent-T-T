@@ -1,4 +1,4 @@
 build/
 src/base/version.h
-dist/
+dist/windows/*.exe
 release/

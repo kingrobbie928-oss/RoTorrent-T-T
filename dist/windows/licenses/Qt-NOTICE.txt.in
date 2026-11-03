@@ -1,0 +1,11 @@
+﻿RoTorrent uses the Qt toolkit, version @QT_VERSION@ (Qt Core, Gui, Widgets, Network, Sql and Svg), under the
+GNU Lesser General Public License version 3 (LGPLv3).
+Copyright (C) The Qt Company Ltd. and other contributors. Qt and the Qt logo are trademarks of The Qt Company Ltd.
+
+- The text of the LGPLv3 is in Qt-LGPL-3.0.txt. The GPLv3 it builds on is in COPYING.GPLv3.
+- Qt is used unmodified and linked dynamically: the Qt6*.dll files and the platforms, styles, imageformats,
+  iconengines, sqldrivers, tls, generic and networkinformation folders next to rotorrent.exe. You may replace
+  them with your own build of the same Qt version.
+- Qt source code for this version: https://download.qt.io/archive/qt/@QT_SERIES@/@QT_VERSION@/single/
+  (qt-everywhere-src-@QT_VERSION@.tar.xz). Qt's own repositories: https://code.qt.io/
+- For the source of RoTorrent itself see SOURCE-OFFER.txt.

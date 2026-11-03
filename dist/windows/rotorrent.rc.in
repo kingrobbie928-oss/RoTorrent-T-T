@@ -1,0 +1,43 @@
+// Windows resources for rotorrent.exe. Configured by CMake (version numbers come from project(VERSION) in the
+// top-level CMakeLists.txt) into <build>/rotorrent.rc. Paths are absolute so the configured copy can live in the
+// build tree.
+#include <winuser.h>
+#include <winver.h>
+
+// The application icon (Explorer, taskbar, Alt+Tab, .torrent / magnet association icons). It must be the first
+// ICON resource so Windows picks it as the executable's icon.
+1 ICON "@ROTORRENT_DIST_DIR@/rotorrent.ico"
+// Qt looks for this name when it registers its window class: gives the taskbar button and Alt+Tab the icon.
+IDI_ICON1 ICON "@ROTORRENT_DIST_DIR@/rotorrent.ico"
+
+// CREATEPROCESS_MANIFEST_RESOURCE_ID = 1, RT_MANIFEST = 24: PerMonitorV2 DPI awareness, long paths, Windows 10/11.
+1 24 "@ROTORRENT_DIST_DIR@/rotorrent.manifest"
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION     @PROJECT_VERSION_MAJOR@,@PROJECT_VERSION_MINOR@,@PROJECT_VERSION_PATCH@,@ROTORRENT_VERSION_BUILD@
+ PRODUCTVERSION  @PROJECT_VERSION_MAJOR@,@PROJECT_VERSION_MINOR@,@PROJECT_VERSION_PATCH@,@ROTORRENT_VERSION_BUILD@
+ FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+ FILEFLAGS       0
+ FILEOS          VOS_NT_WINDOWS32
+ FILETYPE        VFT_APP
+ FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"                       // US English, Unicode
+        BEGIN
+            VALUE "CompanyName",      "The RoTorrent project\0"
+            VALUE "FileDescription",  "RoTorrent\0"
+            VALUE "FileVersion",      "@PROJECT_VERSION@@ROTORRENT_VERSION_STATUS@\0"
+            VALUE "InternalName",     "rotorrent\0"
+            VALUE "LegalCopyright",   "Copyright (C) 2026 The RoTorrent project. Based on qBittorrent. GNU GPL v2 or later.\0"
+            VALUE "OriginalFilename", "rotorrent.exe\0"
+            VALUE "ProductName",      "RoTorrent\0"
+            VALUE "ProductVersion",   "@PROJECT_VERSION@@ROTORRENT_VERSION_STATUS@\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 0x04B0
+    END
+END

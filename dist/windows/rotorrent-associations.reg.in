@@ -1,0 +1,44 @@
+Windows Registry Editor Version 5.00
+
+; Registers RoTorrent as an application that can open .torrent files and magnet: links, so it shows up in
+; Windows Settings > Apps > Default apps (Options > Behavior > "Open default apps" jumps there). Windows 10/11
+; do not let a program make itself the default; the user picks it. Per-user keys only (no admin rights).
+;
+; Installer / portable launcher: copy this file, replace @INSTALL_DIR@ with the install folder written with
+; doubled backslashes (C:\\Apps\\RoTorrent), then import it (reg import) or run it.
+
+[HKEY_CURRENT_USER\Software\Classes\RoTorrent.torrent]
+@="BitTorrent file"
+"FriendlyTypeName"="BitTorrent file"
+
+[HKEY_CURRENT_USER\Software\Classes\RoTorrent.torrent\DefaultIcon]
+@="\"@INSTALL_DIR@\\rotorrent.exe\",0"
+
+[HKEY_CURRENT_USER\Software\Classes\RoTorrent.torrent\shell\open\command]
+@="\"@INSTALL_DIR@\\rotorrent.exe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\Classes\.torrent\OpenWithProgids]
+"RoTorrent.torrent"=""
+
+[HKEY_CURRENT_USER\Software\Classes\RoTorrent.magnet]
+@="URL:Magnet link"
+"URL Protocol"=""
+
+[HKEY_CURRENT_USER\Software\Classes\RoTorrent.magnet\DefaultIcon]
+@="\"@INSTALL_DIR@\\rotorrent.exe\",0"
+
+[HKEY_CURRENT_USER\Software\Classes\RoTorrent.magnet\shell\open\command]
+@="\"@INSTALL_DIR@\\rotorrent.exe\" \"%1\""
+
+[HKEY_CURRENT_USER\Software\RoTorrent\Capabilities]
+"ApplicationName"="RoTorrent"
+"ApplicationDescription"="A fast, modern BitTorrent client."
+
+[HKEY_CURRENT_USER\Software\RoTorrent\Capabilities\FileAssociations]
+".torrent"="RoTorrent.torrent"
+
+[HKEY_CURRENT_USER\Software\RoTorrent\Capabilities\URLAssociations]
+"magnet"="RoTorrent.magnet"
+
+[HKEY_CURRENT_USER\Software\RegisteredApplications]
+"RoTorrent"="Software\\RoTorrent\\Capabilities"

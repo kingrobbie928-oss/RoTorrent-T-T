@@ -1,0 +1,16 @@
+RoTorrent - source code availability (GNU GPL v2 or later)
+=========================================================
+
+RoTorrent is free software released under the GNU General Public License, version 2 or (at your option) any
+later version. It is based on the qBittorrent project (https://github.com/qbittorrent/qBittorrent).
+
+You are entitled to the complete corresponding source code of the exact version you received.
+
+  - This release archive is accompanied by RoTorrent-@VERSION@-source.zip, which contains that source code and
+    the scripts used to build it.
+  - It is also published at @SOURCE_URL@
+  - If you received only the binary, you may request the source code at the address above. This offer is valid for
+    at least three years after the date of this release, as the GPL requires for binary distributions.
+
+The upstream qBittorrent code RoTorrent is derived from is recorded in docs/UPSTREAM.md (commit, date, list of
+removed and changed parts). All original copyright notices are kept in the source files.
